@@ -1,0 +1,59 @@
+
+
+<script type="text/x-red" data-template-name="vlcNode">
+
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-host"><i class="fa fa-tag"></i> Host</label>
+        <input type="text" id="node-input-host" placeholder="Host">
+    </div>
+    <div class="form-row">
+        <label for="node-input-port"><i class="fa fa-tag"></i> Port</label>
+        <input type="text" id="node-input-port" placeholder="Port">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-password"><i class="fa fa-tasks"></i> Password</label>
+        <input type="text" id="node-input-password" placeholder="Password">
+    </div>
+</script>
+
+
+<!-- Next, some simple help text is provided for the node.                   -->
+<script type="text/x-red" data-help-name="acc9xx">
+    <h2>VLC</h2>
+    <br/>
+</script>
+
+<!-- Finally, the node type is registered along with all of its properties   -->
+<!-- The example below shows a small subset of the properties that can be set-->
+
+<script type="text/javascript">
+    RED.nodes.registerType('vlcNode',{
+        category: 'video',      // the palette category
+        color:"#FFFFFF",
+        defaults: {
+            password:{value:""},
+            host:{value:"localhost"},
+            port:{value:"8080"}
+
+        },
+        inputs:1,               // set the number of inputs - only 0 or 1
+        outputs:1,              // set the number of outputs - 0 to n
+        icon: "vlcmedia.png",     // saved in  icons/myicon.png
+        label: function() {
+            if (this.name) {
+                return this.name;
+            } else {
+                return "VLC";
+            }
+        },
+        labelStyle: function() { // sets the class to apply to the label
+            return this.name ? "node_label_italic" : "";
+        }
+    });
+</script>

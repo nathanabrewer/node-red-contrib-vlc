@@ -1,2 +1,9 @@
 # node-red-contrib-vlc
-node-red node for tjfontaine/node-vlc to control VLC
+node-red node to control VLC via web API. Make sure web interface for VLC is activated.
+
+early stages, supporting
+# play
+# inPlay
+# pause
+# stop
+# seek

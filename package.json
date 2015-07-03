@@ -1,0 +1,26 @@
+{
+  "name": "node-red-contrib-vlc",
+  "version": "0.1.2",
+  "description": "node for vlc",
+  "dependencies": {
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nathanabrewer/node-red-contrib-vlc"
+  },
+  "license": "Apache",
+  "keywords": [
+    "VLC"
+  ],
+  "node-red": {
+    "nodes": {
+      "vlcNode": "vlc/node-red-contrib-vlc.js"
+    }
+  },
+  "author": {
+    "name": "Nathan Brewer",
+    "email": "nathan.a.brewer@dftz.org",
+    "url": "http://dftz.org"
+  }
+}

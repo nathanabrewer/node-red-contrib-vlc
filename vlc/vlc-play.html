@@ -2,10 +2,10 @@
 
 
 
-<script type="text/x-red" data-template-name="vlc-node">
+<script type="text/x-red" data-template-name="vlc-play">
     <div class="form-row">
-        <label for="node-input-name"><i class="icon-tag"></i> Node Name</label>
-        <input type="text" id="node-input-name" placeholder="name">
+        <label for="node-input-videouri"><i class="icon-tag"></i>video-uri</label>
+        <input type="text" id="node-input-videouri" placeholder="videouri">
     </div>
     <div class="form-row">
         <label for="node-input-vlc-server"><i class="fa fa-tag"></i> Server</label>
@@ -15,7 +15,7 @@
 
 
 <!-- Next, some simple help text is provided for the node.                   -->
-<script type="text/x-red" data-help-name="vlc-node">
+<script type="text/x-red" data-help-name="vlc-play">
     <h2>VLC</h2>
     <br/>
 </script>
@@ -23,21 +23,21 @@
 
 <script type="text/javascript">
 
-    RED.nodes.registerType('vlc-node',{
+    RED.nodes.registerType('vlc-play',{
         category: 'video',      // the palette category
         color:"#FFFFFF",
         defaults: {
-            name:       {value:""},
+            videouri: {value:""},
             server: {value:"", type:"vlc-server"},
         },
         inputs:1,               // set the number of inputs - only 0 or 1
         outputs:1,              // set the number of outputs - 0 to n
         icon: "vlcmedia.png",     // saved in  icons/myicon.png
         label: function() {
-            if (this.name) {
-                return this.name;
+            if (this.videouri) {
+                return this.videouri;
             } else {
-                return "VLC";
+                return "Play URI";
             }
         },
         labelStyle: function() { // sets the class to apply to the label

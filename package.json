@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-vlc",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "node for vlc",
   "dependencies": {
     "when": "latest"
@@ -17,7 +17,7 @@
     "nodes": {
       "vlcNode": "vlc/node-red-contrib-vlc.js",
       "vlcServer": "vlc/vlc-server-config.js",
-      "vlcPlay":"vlc/vlc-play.js"
+      "vlcPlay": "vlc/vlc-play.js"
     }
   },
   "author": {

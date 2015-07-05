@@ -3,7 +3,7 @@ module.exports = function(RED) {
 
     "use strict";
     var http = require("http");
-    var Q = require('q');
+    var when = require('when');
 
     function vlcServer(config) {
         // Create a RED node
@@ -42,7 +42,7 @@ module.exports = function(RED) {
         };
 
         this.play = function(id){
-          var deferred = Q.defer();
+          var deferred = when.defer();
           var params = {command:'pl_stop'};
           if(id) params.id = id;
           vlcRequest(params,deferred);
@@ -51,7 +51,7 @@ module.exports = function(RED) {
         }
 
         this.inPlay = function(uri){
-          var deferred = Q.defer();
+          var deferred = when.defer();
           var params = {command:'in_play', input: uri};
           node.warn("Loading "+uri);
           vlcRequest(params,deferred);
@@ -60,7 +60,7 @@ module.exports = function(RED) {
         }
 
         this.stop = function(cb){
-          var deferred = Q.defer();
+          var deferred = when.defer();
           var params = {command:'pl_stop'};
           node.warn("Stop ");
           vlcRequest(params,deferred);
@@ -69,7 +69,7 @@ module.exports = function(RED) {
         }
 
         this.pause = function(id){
-          var deferred = Q.defer();
+          var deferred = when.defer();
           var params = {command:'pl_pause'};
           if(id) params.id = id;
           node.warn("Pause ");
@@ -79,7 +79,7 @@ module.exports = function(RED) {
         }
 
         this.seek = function(position){
-          var deferred = Q.defer();
+          var deferred = when.defer();
           var params = {command:'seek', val: position};
           node.warn("[nrVLC]: Seek "+position);
           vlcRequest(params,deferred);
@@ -88,7 +88,7 @@ module.exports = function(RED) {
         }
 
         this.fullscreen = function(reqFullScreen){
-          var deferred = Q.defer();
+          var deferred = when.defer();
           var params = {command:'fullscreen'};
 
           if(node.lastResponse.fullscreen != reqFullScreen){

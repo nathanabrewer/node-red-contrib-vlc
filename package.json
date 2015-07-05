@@ -3,7 +3,7 @@
   "version": "0.0.2",
   "description": "node for vlc",
   "dependencies": {
-    "q": "latest"
+    "when": "latest"
   },
   "repository": {
     "type": "git",
